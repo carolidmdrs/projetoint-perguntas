@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Exercicio {
+
+   public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
+    boolean acertou = false;
+    int contador = 0;
+    String alternativa;
+    do {
+    System.out.println("O valor hexadecimal 9F corresponde, em decimal, ao valor:");
+    System.out.println("a) 16");
+    System.out.println("b) 99");
+    System.out.println("c) 105");
+    System.out.println("d) 159"); // resposta correta
+    System.out.println("e) 234");
+    System.out.print("Escolha uma alternativa: ");
+    alternativa = entrada.next();
+    switch (alternativa) {
+    case "d":
+    case "D":
+    System.out.println("Resposta correta!");
+    acertou = true;
+    contador = contador + 1;
+    break;
+    case "a";
+    case "A";
+    case "b":
+    case "B":
+    case "c":
+    case "C":
+    case "e":
+    case "E":
+    System.out.println("Resposta incorreta!");
+    contador = contador + 1;
+    break;
+    default:
+    System.out.println("Escolha inválida!");
+    contador = contador + 1;
+}
+} while (!acertou && contador < 3);
+    if (acertou) {
+    System.out.println("Você acertou na " + contador + "a tentativa!");
+} else {
+    System.out.println("Resposta incorreta nas 3 tentativas!");
+}
+}
+}
